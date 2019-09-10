@@ -2,10 +2,14 @@
 
 const resolutionHandler = require('./lib/resolutionHandler');
 
+function make(humaneUri) {
+    return { id: humaneUri };
+}
+
 module.exports = {
-    'semprop': {
+    'rel': {
         'tech': {
-            'publicIpAddress': 'tech//public-ip-address'
+            'publicIpAddress': make('tech//public-ip-address')
         }
     },
     registerResolver: resolutionHandler.register,
